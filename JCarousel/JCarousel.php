@@ -426,7 +426,11 @@ class JCarousel extends CBaseListView
 		$this->htmlOptions['id']=$this->getId().'-widget';
 
 		if($this->baseScriptUrl===null)
-			$this->baseScriptUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('ext.JCarousel.assets'));
+			$this->baseScriptUrl=Yii::app()->assetManager->publish(
+			    Yii::app()->extensionPath . DIRECTORY_SEPARATOR . 
+			    'JCarousel' . DIRECTORY_SEPARATOR .
+			    'assets' . DIRECTORY_SEPARATOR
+			);
 
 		if($this->cssFile!==false)
 		{
