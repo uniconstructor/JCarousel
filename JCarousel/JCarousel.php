@@ -566,9 +566,11 @@ class JCarousel extends CBaseListView
 			}
 			
 			$image = '<img src="'.eval('return '.$this->thumbUrl.';').'" alt="'.$altText.'" '.$titleAttr.' />';
-
+            
             if (isset($this->text)) {
                 $text = '<a href='.eval('return '.$this->imageUrl.';').'><span>'.eval('return '.$this->text.';').'</span></a>';
+            } else {
+                $text = '';
             }
 
             if (isset($this->activeId) && ($this->activeId == eval('return '.$this->catId.';'))) {
